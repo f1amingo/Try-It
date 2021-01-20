@@ -1,12 +1,9 @@
-package com.zhixin.learn.protobuf;
+package cn.zhixin.learn.protobuf;
 
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintStream;
 
-import com.google.protobuf.Descriptors;
-import com.zhixin.learn.protobuf.AddressBookProtos.Person;
-import com.zhixin.learn.protobuf.AddressBookProtos.AddressBook;
+import cn.zhixin.learn.protobuf.AddressBookProtos.Person;
+import cn.zhixin.learn.protobuf.AddressBookProtos.AddressBook;
 
 class ListPeople {
     // Iterates though all people in the AddressBook and prints info about them.

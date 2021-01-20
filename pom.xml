@@ -6,14 +6,48 @@
 
     <groupId>com.zhixin</groupId>
     <artifactId>Try-It</artifactId>
-    <version>0.0</version>
+    <version>0.2</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <dubbo.version>2.7.8</dubbo.version>
+    </properties>
 
     <dependencies>
+        <!--    protobuf    -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>3.13.0</version>
         </dependency>
+        <!--    protobuf    -->
+
+
+        <!--    dubbo    -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-dependencies-zookeeper</artifactId>
+            <version>${dubbo.version}</version>
+            <type>pom</type>
+        </dependency>
+        <!--    dubbo    -->
+
     </dependencies>
 
 </project>

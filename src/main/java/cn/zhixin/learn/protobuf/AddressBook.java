@@ -1,4 +1,4 @@
-package com.zhixin.learn.protobuf;
+package cn.zhixin.learn.protobuf;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -8,14 +8,11 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import com.zhixin.learn.protobuf.AddressBookProtos.Person;
-import com.zhixin.learn.protobuf.AddressBookProtos.AddressBook;
-
 class AddPerson {
     // This function fills in a Person message based on user input.
-    static Person PromptForAddress(BufferedReader stdin,
-                                   PrintStream stdout) throws IOException {
-        Person.Builder person = Person.newBuilder();
+    static AddressBookProtos.Person PromptForAddress(BufferedReader stdin,
+                                                     PrintStream stdout) throws IOException {
+        AddressBookProtos.Person.Builder person = AddressBookProtos.Person.newBuilder();
 
         stdout.print("Enter person ID: ");
         person.setId(Integer.valueOf(stdin.readLine()));
@@ -36,17 +33,17 @@ class AddPerson {
                 break;
             }
 
-            Person.PhoneNumber.Builder phoneNumber =
-                    Person.PhoneNumber.newBuilder().setNumber(number);
+            AddressBookProtos.Person.PhoneNumber.Builder phoneNumber =
+                    AddressBookProtos.Person.PhoneNumber.newBuilder().setNumber(number);
 
             stdout.print("Is this a mobile, home, or work phone? ");
             String type = stdin.readLine();
             if (type.equals("mobile")) {
-                phoneNumber.setType(Person.PhoneType.MOBILE);
+                phoneNumber.setType(AddressBookProtos.Person.PhoneType.MOBILE);
             } else if (type.equals("home")) {
-                phoneNumber.setType(Person.PhoneType.HOME);
+                phoneNumber.setType(AddressBookProtos.Person.PhoneType.HOME);
             } else if (type.equals("work")) {
-                phoneNumber.setType(Person.PhoneType.WORK);
+                phoneNumber.setType(AddressBookProtos.Person.PhoneType.WORK);
             } else {
                 stdout.println("Unknown phone type.  Using default.");
             }
@@ -67,7 +64,7 @@ class AddPerson {
 //            System.exit(-1);
 //        }
 
-        AddressBook.Builder addressBook = AddressBook.newBuilder();
+        AddressBookProtos.AddressBook.Builder addressBook = AddressBookProtos.AddressBook.newBuilder();
 
         // Read the existing address book.
         try {
