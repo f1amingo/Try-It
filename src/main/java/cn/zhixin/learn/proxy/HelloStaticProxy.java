@@ -8,6 +8,8 @@ package cn.zhixin.learn.proxy;
  * @Description: 静态代理实现
  * 代理模式：将对象的实际行为封装起来，对外提供代理，以控制对这个对象的访问
  * 应用：远程代理（RMI, RPC），虚代理（JDBC连接），保护代理（鉴权）
+ * 缺点：同一功能，接口不同，就需要实现多个相似的XXXStaticProxy
+ *
  * 参考：
  * 1. https://xie.infoq.cn/article/b70498d6c65595e0a3ccb4c7d
  * 2. https://www.liaoxuefeng.com/wiki/1252599548343744/1281319432618017#0
